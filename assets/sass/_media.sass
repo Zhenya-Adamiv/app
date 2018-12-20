@@ -1,0 +1,471 @@
+@import "vars"
+
+
+/*==========  Desktop First  ==========*/
+@media (max-width: 1650px)
+	.form
+		&-main
+			padding: 2.5em 0 8em
+			h2
+				margin-bottom: 0.7em
+			p
+				margin-bottom: 1.8em 
+				line-height: 1.4  
+			label
+				input
+					padding: 1.6em 1em 1.6em 4.688em 
+	&-btn
+		bottom: 2em
+		padding: 1.65em 1.7em 1.55em
+		width: 14.625em
+	.main
+		padding: 12em 0 4em
+		height: 768px
+		max-height: 99vh
+		.slider
+			.item
+				height: 768px
+				max-height: 99vh
+	.sfera
+		&:before
+			height: 195%
+	.gallery
+		.slider
+			width: 65%
+			.item
+				height: 25em
+@media (max-width: 1400px)
+	.gallery
+		.slider
+			width: 75%
+			.item
+				height: 24em									
+// ≥1200px
++media-breakpoint-down(lg)
+	.header
+		&-menu
+			ul
+				li
+					&:not(:last-child)
+						margin-right: 1.25em
+					a 
+						font-size: 0.9em
+		&-phone
+			height: 2.5em
+			.phone
+				font-size: 1em
+			.callback
+				font-size: 0.9em
+	.sfera
+		&:before
+			height: 170%
+		.title
+			margin-bottom: 20px	
+		.slider
+			.arrow
+				bottom: 4.5em
+				&-next
+					left: 21em				
+	.gallery
+		.slider
+			width: 80%
+			.item
+				height: 22em
+			.arrow
+				left: -10%
+	.footer
+		&-menu
+			margin-top: 4em
+			ul
+				flex-direction: column
+				li
+					margin-bottom: 0.75em														
+// ≥992px
++media-breakpoint-down(md)
+	body
+		font-size: 15px
+	.header
+		.row
+			flex-wrap: wrap
+		&.open
+			max-height: 100%
+			background-color: #fff  
+		&-phone
+			display: none
+			.callback
+				font-size: 1.25em
+		&-icon
+			display: block
+			width: 55px
+			height: 40px
+			position: relative
+			transform: rotate(0deg)
+			transition: .5s ease-in-out
+			cursor: pointer
+			span
+				display: block
+				position: absolute
+				height: 7px
+				width: 52%
+				opacity: 1
+				transform: rotate(0deg)
+				transition: .25s ease-in-out
+				&:nth-child(even)
+					left: 50%
+					border-radius: 0 9px 9px 0
+				&:nth-child(odd)
+					left: 0px
+					border-radius: 9px 0 0 9px
+				&:nth-child(1)
+					top: 0px
+					background: #1e62aa
+				&:nth-child(2)
+					top: 0px
+					background: #1e62aa
+				&:nth-child(3)
+					top: 16px
+					background: #0de24f
+				&:nth-child(4)
+					top: 16px
+					background: #0de24f
+				&:nth-child(5)
+					top: 32px
+					background: #1e62aa
+				&:nth-child(6)
+					top: 32px
+					background: #1e62aa
+			&.open
+				span
+					&:nth-child(1)
+						transform: rotate(45deg)
+						left: 5px
+						top: 7px
+					&:nth-child(2)
+						transform: rotate(-45deg)
+						left: calc(50% - 5px)
+						top: 7px
+					&:nth-child(3)
+						left: -50%
+						opacity: 0
+					&:nth-child(4)
+						top: 18px
+						left: 100%
+						opacity: 0
+					&:nth-child(5)
+						transform: rotate(-45deg)
+						left: 5px
+						top: 29px
+					&:nth-child(6)
+						transform: rotate(45deg)
+						left: calc(50% - 5px)
+						top: 29px       
+		&-menu
+			display: none
+			&_mobile
+				width: 100%
+				margin: 1em 0
+				padding-bottom: 1em
+				ul
+					margin: 2em 0 3em
+					li
+						width: 100%
+						text-align: center
+						a
+							display: block
+							width: 100%
+							padding: 0.8em 0
+							font-size: 1.1em
+				.header-phone
+					display: block
+					.phone
+						display: block
+						margin-bottom: 0.5em
+						font-size: 1.25em
+					.callback
+						display: inline-block
+	.main
+		padding: 10em 0 6.500em
+		height: 600px
+		max-height: 99vh
+		margin-bottom: 35em
+		.slider
+			.item
+				height: 600px
+				max-height: 99vh
+			&-max
+				bottom: 4.4%	
+		.dots
+			&:before
+				bottom: 10px
+
+	.sfera
+		padding-top: 2em
+		z-index: 1000
+		.title
+			margin-bottom: 1em
+		&-bg
+			display: none
+		&:before
+			display: none
+		.slider
+			.arrow
+				bottom: 29em
+				&-next
+					left: 40em
+
+	.advantages
+		&:before
+			height: 100%
+
+	.consult
+		.row
+			justify-content: center	
+	.footer
+		&-top
+			margin-bottom: 5em
+		&-menu
+			ul
+				flex-direction: row									
+
+	.form
+		&-wrap
+			transform: translateY(12em)
+		&-main
+			box-shadow: 0px 0px 49.56px 9.44px rgba(0, 0, 0, 0.15)
+		&-consult
+			margin-right: 0
+			&:after
+				right: -2em
+				bottom: -2em
+		&-footer
+			display: none		
+		 
+						  
+// ≥768px
++media-breakpoint-down(sm)
+	.header
+		max-height: 90px
+		&-logo
+			width: 90px
+	.main
+		padding: 2em 0 6.500em
+		margin-top: 90px
+		height: 500px
+		max-height: 85vh
+		position: relative
+		&-title
+			position: relative
+			z-index: 100
+			h1
+				font-size: 2.7em
+			p
+				font-size: 16px
+		&:before
+			content: ''
+			position: absolute
+			width: 100%
+			height: 100%
+			top: 0
+			left: 0
+			background-color: rgba($text, .3)
+			z-index: 1
+		.slider
+			.item
+				height: 500px
+				max-height: 85vh
+
+	.product
+		&-block
+			&__title
+				margin-right: 0.5em
+				h2
+					max-width: 75%
+					font-size: 1em
+
+	.sfera
+		.slider
+			.item
+				&-img
+					height: 28em
+			.arrow
+				bottom: 50%
+				&-next
+					left: 82%
+	.gallery
+		.slider
+			width: 90%
+			margin-right: -20%
+			.item
+				height: 20em
+			.arrow
+				left: -15%
+	.consult
+		.row
+			justify-content: flex-start																
+				
+	.form
+		&-wrap
+			z-index: 100
+			transform: translateY(14em)
+			&:before
+				z-index: 100
+				width: 107%
+		&-main
+			position: relative
+			z-index: 1000
+			padding-bottom: 9em
+		&-btn
+			right: 50%
+			transform: translate(50%)
+		&-consult
+			&__title
+				p
+					font-size: 1.5em
+				h2
+					font-size: 2em
+	.footer
+		padding-top: 4em
+		padding-bottom: 0em
+		&-top
+			margin-bottom: 3em
+		&-menu
+			ul
+				flex-direction: column
+		&-bottom
+			flex-wrap: wrap
+			.copy
+				order: 2
+				width: 100%
+				text-align: center
+			.studio
+				justify-content: center
+				width: 100%
+				margin-bottom: 1em
+				text-align: center									
+
+// ≥576px
++media-breakpoint-down(xs)
+	h2
+		font-size: 2.5em
+	body
+		font-size: 14px
+	.header
+		&-logo
+			margin-left: 1em
+		&-icon
+			margin-right: 1em		
+	.main
+		padding-top: 0
+		height: 380px
+		max-height: 100vh
+		&-title
+			h1
+				font-size: 2.5em
+			p
+				line-height: 2	
+		.slider
+			.item
+				height: 380px
+				max-height: 100vh
+	.form
+		&-wrap
+			transform: translateY(12em)
+		&-consult
+			padding-top: 2em
+			padding-bottom: 3em
+			&:after
+				bottom: -1em
+				right: -1em
+			.inputs
+				margin-top: 3em
+				transform: translateX(0)
+				flex-wrap: wrap
+				input
+					width: 100%
+					margin-bottom: 1em
+					margin-right: 0
+				button
+					margin-top: 1em
+					display: block
+					margin-left: auto
+					margin-right: 1em
+
+	.product
+		&-block
+			&__title
+				justify-content: center
+	.sfera
+		.slider
+			.item
+				&-img
+					height: 22em
+			.arrow
+				bottom: 57%
+	.gallery
+		.slider
+			width: 100%
+			margin: 0
+			.slick
+				&-slide
+					margin: 0 0.5em
+				&-list
+					padding: 0 20%!important	
+			.item
+				height: 18em
+			.arrow
+				display: none!important
+	.popup-map
+		height: 23em												
+@media (max-width: 420px)
+	.main
+		h1
+			font-size: 2.5em
+		p
+			line-height: 1.6
+	.form
+		&-wrap
+			transform: translateY(9em)
+		&-consult
+			&__title
+				h2
+					font-size: 2em		
+	.sfera
+		.slider
+			.item
+				&-img
+					height: 15em
+			.arrow
+				width: 3.5em
+				height: 3.5em
+				bottom: 75%
+				&:before
+					width: 0.8em
+					height: 1.2em
+	.gallery
+		.slider
+			.slick
+				&-list
+					padding: 0 10%!important	
+			.item
+				height: 14em
+	.footer-block:not(:last-child)
+		width: 100%																															  
+	
+/*==========  Mobile First  ==========*/
+
+// ≤576px
++media-breakpoint-up(sm)
+	 
+// ≤768px
++media-breakpoint-up(md)
+
+// ≤992px
++media-breakpoint-up(lg)
+	.header
+		.container
+			max-width: 93%
+// ≤1200px
++media-breakpoint-up(xl)
+	.header
+		.container
+			max-width: 1140px

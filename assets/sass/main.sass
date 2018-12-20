@@ -1,0 +1,854 @@
+@import "vars"
+@import "fonts"
+@import "libs"
+
+::placeholder
+	color: $text
+	opacity: 0.4
+::selection
+	background-color: $accent
+	color: #fff
+
+::hover,::active,::focus
+  outline: none
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.1
+	font-family: $def-font
+	overflow-x: hidden
+	color: $text
+	input, textarea
+		border: #666 1px solid
+		outline: none
+img, svg
+	display: block
+	max-width: 100%
+	height: auto
+	&.img-width
+	 width: 100%
+a
+	color: $text
+	&:hover
+		transition: all .25s ease
+		color: #000
+		text-decoration: none
+b, strong
+	font-weight: bold
+ul, li 
+	list-style: none
+	padding: 0
+	margin: 0
+button:focus,button:active,a:focus,a:active
+	outline: none
+a:not([href]):not([tabindex])
+	color: $text
+	cursor: pointer
+		
+.hidden
+	display: none
+h2
+	font-size: 3em
+	font-weight: 900
+.title
+	position: relative
+	&:after, &:before
+		content: ''
+		position: absolute
+		height: 1px
+		top: -0.6em
+	&:after
+		background-color: rgba(13, 226, 79, 0.66)
+		left: 0
+		width: 14px
+	&:before
+		background-color:  rgba(30, 98, 170, 0.66)
+		left: 18px
+		width: 55px
+@keyframes sheen 
+	100% 
+		transform: rotateZ(-24deg) translate(6em, 10.5em)
+  
+
+	
+
+.header
+	position: fixed
+	top: 0
+	left: 0
+	width: 100%
+	background-color: rgba(255, 255, 255, 0.77)
+	box-shadow: 0px 0px 59px 0px rgba(0, 0, 0, 0.33)	
+	max-height: 100px
+	padding: 10px 0
+	transition: all 1s ease
+	z-index: 10000
+	.row
+		flex-wrap: nowrap
+	&.scroll
+		transition: all .75s ease
+		max-height: 70px
+		padding: 5px 0
+		.header
+			&-logo
+				width: 120px
+				transition: all .75s ease
+				img
+					width: 70px
+					transition: all .75s ease
+			&-phone
+				height: 2.5em
+				transition: all 1s ease		
+	&-logo
+		width: 120px
+		transition: all .75s ease
+		img
+			display: block
+			margin: 0 auto
+			width: 100px
+			transition: all .75s ease			
+	&-menu
+		height: 100%
+		ul
+			height: 100%
+			li
+				display: inline-block
+				height: 100%
+				&:not(:last-child)
+					margin-right: 1.75em
+				a
+					height: 100%
+					padding: 0.5em 0
+					&:hover
+						text-decoration: none
+		&_mobile
+			display: none				
+	&-phone
+		display: flex
+		flex-direction: column
+		justify-content: space-between
+		text-align: center
+		height: 3.125em
+		transition: all .75s ease
+		.phone
+			font-size: 1.25em
+			font-weight: bold
+		.callback
+			margin: 0
+			cursor: pointer
+			position: relative
+			-webkit-background-clip: text
+  			-webkit-text-fill-color: transparent
+			&:before
+				content: ''
+				position: absolute
+				bottom: -0.25em
+				left: 50%
+				transform: translateX(-50%)
+				background: linear-gradient(-24deg, rgba(30, 98, 170, 0.23) 49%, rgba(13, 226, 79, 0.23) 51%)
+				background-color: #1e62aa
+				width: 105%
+				height: 2px
+	&-icon
+		display: none			
+
+.main
+	padding: 14.375em 0 6.500em
+	position: relative
+	z-index: 10
+	height: 900px
+	max-height: 90vh
+	h1
+		color: #fff
+		font-size: 3.438em
+		font-weight: 900
+		margin-top: 1.727em
+		margin-bottom: 0.473em
+		z-index: 100
+	p
+		position: relative
+		color: #fff
+		line-height: 2.25
+		z-index: 100
+		height: 100px
+	.slider
+		position: absolute
+		width: 100%
+		top: 0
+		left: 0
+		.item
+			background-repeat: no-repeat
+			background-position: center
+			background-size: cover
+			width: 100%
+			height: 900px
+			max-height: 90vh	
+	.arrow
+		position: absolute
+		bottom: 5%
+		z-index: 100
+		width: 10px
+		height: 16px
+		background: url(../assets/img/svg/arrow.svg) center no-repeat
+		background-size: cover
+		cursor: pointer
+		&-prev
+			left: 10px
+			transform: rotate(180deg)
+		&-next
+			left: 50px
+		&-container
+			position: absolute
+			width: 100%
+			height: 100%
+			top: 0
+			left: 50%
+			transform: translateX(-50%)
+			z-index: 100
+	.dots
+		position: absolute
+		width: 100%
+		left: 50%
+		bottom: 5.2%
+		transform: translateX(-50%)
+		padding-left: 90px
+		&:before
+			content: ''
+			position: absolute
+			width: 40px
+			height: 1px
+			background-color: #fff
+			bottom: 11px
+			left: 125px
+			z-index: 100
+		li
+			display: none
+			position: absolute
+			bottom: 3.5%
+			&.slick-active
+				display: inline-block
+			button
+				background: none
+				border: none
+				color: #fff
+				font-size: 1em
+				&:before
+					content: '0'
+	.slider-max
+		position: absolute
+		width: 100%
+		left: 50%
+		bottom: 4.7%
+		transform: translateX(-50%)
+		padding-left: 174px
+		color: #fff
+		&:before
+			content: '0'		
+
+.product
+	padding: 5.625em 0
+	position: relative
+	background-color: #fff
+	z-index: 10
+	&:before
+		content: ''
+		position: absolute
+		top: 0
+		right: 0
+		width: 100%
+		height: 112%
+		background: url(../assets/img/bg/product-bg.png) center right no-repeat
+		background-size: auto 100%
+	&-block
+		position: relative
+		box-shadow: 0px 0px 59px 0px rgba(0, 0, 0, 0.15)
+		margin-bottom: 2.500em
+		z-index: 0
+		.popup-hidden
+			position: absolute
+			width: 100%
+			height: 100%
+			top: 0
+			left: 0
+			opacity: 0
+			cursor: pointer
+			img
+				height: 0
+			h2	
+				height: 0px!important
+		&__wrap
+			position: relative
+			display: block
+			background-color: #fff
+			padding: 1em 1em 2em
+			cursor: pointer
+			&:before
+				content: ''
+				position: absolute
+				top: 1em
+				left: 1em
+				width: 50%
+				height: 50%
+				background: linear-gradient(-24deg, #1e62aa 10%, #0de24f 90%)
+				z-index: -10
+				transition: all .1s ease
+			img
+				display: block
+				margin: 0 auto	
+		ul
+			display: none
+		&__title
+			display: flex
+			justify-content: flex-end
+			margin-right: 1.25em
+			h2
+				font-size: 1.125em
+				font-weight: 500
+				max-width: 206px
+				margin-right: 0.875em
+		&__arrow
+			position: relative
+			top: -0.35em
+			width: 30px
+			height: 30px
+			background: linear-gradient(-37deg, rgba(30, 98, 170, 0.93) 0%, rgba(13, 226, 79, 0.93) 100%)
+			box-shadow: 0px 0px 59px 0px rgba(0, 0, 0, 0.14)
+			svg
+				position: absolute
+				top: 50%
+				transform: translateY(-50%)
+				right: -1.5em
+				width: 50px
+				max-width: 50px
+				height: 100%
+				fill: #777
+				opacity: 0.75	
+		&:hover
+			z-index: 10
+			ul
+				display: block
+				margin-left: 1em
+				margin-top: 1.75em
+				li
+					position: relative
+					padding-left: 1.6em
+					&:not(:last-child)
+						margin-bottom: 1.125em	
+					&:before
+						content: ''
+						position: absolute
+						width: 1.125em
+						height: 1px
+						top: 50%
+						transform: translateY(-50%)
+						left: 0
+						background-color: rgba(13, 226, 79, 0.39)
+						background: linear-gradient(146deg, rgba(30, 98, 170, 0.75) 38%, rgba(13, 226, 79, 0.75) 62%)
+
+			.product-block__wrap
+				box-shadow: 0px 0px 49.56px 9.44px rgba(0, 0, 0, 0.15)
+				&:before
+					top: -1em
+					left: -1em	
+
+.sfera
+	position: relative
+	&:before
+		content: ''
+		position: absolute
+		width: 100%
+		height: 211%
+		top: -40%
+		left: 0
+		background: url(../assets/img/bg/sfera-bg-2.png) center left no-repeat
+		background-size: auto 100%
+	&-bg
+		position: absolute
+		width: 44%
+		height: 34.063em
+		top: 0
+		left: 0
+		background-repeat: no-repeat
+		background-position: center
+		background-size: cover
+	.title
+		display: inline-block
+		margin-bottom: 0
+	.slider
+		.item
+			&-img
+				width: 100%
+				height: 34.063em
+				background-repeat: 
+				background-position: center
+				background-size: cover
+			&-text	
+				h3
+					color: $accent
+					font-size: 1.125em
+					font-weight: 500
+					margin: 3em 0 1.5em
+				p
+					line-height: 1.875
+					margin-bottom: 2em
+		.arrow
+			position: absolute
+			z-index: 1000
+			bottom: -1em
+			width: 4.25em
+			height: 4.25em
+			background: linear-gradient(-24deg, #1e62aa 10%, #0de24f 90%)
+			cursor: pointer
+			&:before
+				content: ''
+				position: absolute
+				top: 50%
+				left: 50%
+				transform: translate(-50%, -50%)
+				width: 1em
+				height: 1.625em
+				background: url(../assets/img/svg/arrow.svg) center no-repeat
+				background-size: cover
+				opacity: 0.75
+				transition: all .2s ease
+			&:hover:before
+				opacity: 1
+			&-next
+				left: 26em
+			&-prev
+				display: none!important
+				left: 20em
+				transform: rotate(180deg)
+
+.advantages
+	padding: 10em 0
+	position: relative
+	&:before
+		content: ''
+		position: absolute
+		right: 0
+		top: 50%
+		transform: translateY(-50%)
+		width: 100%
+		height: 170%
+		background: url(../assets/img/bg/advan-bg.png) center right no-repeat
+		background-size: auto 100%
+	.title
+		margin-bottom: 1.354em
+	.col-lg-4:nth-child(1)
+		.advantages-block
+			background: url(../assets/img/bg/advan-bg-1.png) left top no-repeat
+			background-size: cover
+	.col-lg-4:nth-child(2)
+		.advantages-block
+			background: url(../assets/img/bg/advan-bg-2.png) right bottom no-repeat
+			background-size: cover
+	.col-lg-4:nth-child(3)
+		.advantages-block
+			background: url(../assets/img/bg/advan-bg-3.png) left top no-repeat
+			background-size: cover
+	.col-lg-4:nth-child(4)
+		.advantages-block
+			background: url(../assets/img/bg/advan-bg-4.png) right bottom no-repeat
+			background-size: cover
+	.col-lg-4:nth-child(5)
+		.advantages-block
+			background: url(../assets/img/bg/advan-bg-5.png) left top no-repeat
+			background-size: cover
+	.col-lg-4:nth-child(6)
+		.advantages-block
+			background: url(../assets/img/bg/advan-bg-6.png) right top no-repeat
+			background-size: cover													
+	&-block
+		text-align: center
+		background-color: #fff
+		box-shadow: 0px 0px 59px 0px rgba(0, 0, 0, 0.15)
+		padding: 2.500em 1em 1.833em 
+		margin-bottom: 30px
+		transition: all .25s ease
+		&:hover
+			box-shadow: 0px 0px 59px 5px rgba(0, 0, 0, 0.2)
+			svg
+				transform: scale(1.1)
+		svg
+			position: relative
+			margin: 0 auto 1.7em
+			max-width: 4.688em
+			max-height: 5.313em
+			fill: $text
+			transition: all .25s ease
+		p
+			font-size: 1.125em
+			line-height: 1.333
+			margin-bottom: 0
+
+.gallery
+	overflow: hidden
+	padding-top: 2em
+	.title
+		margin-bottom: 0.729em
+	.slider
+		display: block
+		width: 60%
+		margin-left: auto
+		position: relative
+		.slick-slide
+			margin-left: 1.875em
+		.item
+			height: 27.813em
+			width: 23.125em
+			&-bg
+				background-repeat: no-repeat
+				background-position: center
+				background-size: cover
+				height: 100%
+				width: 100%
+		.arrow
+			position: absolute
+			z-index: 10
+			top: 50%
+			transform: translateY(-50%)
+			left: -12%
+			width: 4.375em
+			height: 4.375em
+			border: 2px solid $text
+			opacity: 0.3
+			cursor: pointer
+			transition: all .2s ease
+			&:hover
+				opacity: 0.8
+			&:before
+				content: ''
+				position: absolute
+				width: 0.625em
+				height: 1.25em
+				top: 50%
+				left: 50%
+				transform: translate(-50%, -50%)
+				background: url(../assets/img/svg/arrow-accent.svg) center no-repeat
+				background-size: cover
+			&-next
+				
+			&-prev
+				transform: translate(-4.3em, 2.15em) rotate(180deg)
+
+.consult
+	padding: 8.313em 0 15.625em
+	position: relative
+	&:before
+		content: ''
+		position: absolute
+		width: 100%
+		height: 100%
+		bottom: 0
+		left: 0
+		background: url(../assets/img/bg/consult-bg.png) bottom left no-repeat
+		background-size: auto
+
+.footer
+	background-color: #242424
+	color: #fff
+	padding: 6.250em 0 1.875em
+	position: relative
+	&-top
+		margin-bottom: 8.438em
+	&-bottom
+		display: flex
+		justify-content: space-between
+		align-items: center
+		.copy
+			color: $text
+			font-size: 0.875em
+		.studio
+			display: flex
+			align-items: center
+			p
+				margin-bottom: 0
+				margin-right: 0.875em
+				color: #fff	
+	&-wrap
+		display: flex
+		flex-wrap: wrap
+	&-block
+		display: flex
+		align-items: end
+		&:not(:last-child)
+			width: 50%
+			margin-bottom: 2.938em
+		svg
+			fill: $accent
+			max-width: 1em
+			max-height: 1em
+			margin-right: 1.5em
+		a
+			color: #fff
+			display: inline-block
+		p
+			margin-bottom: 0
+	&-menu
+		margin-top: 5.25em
+		ul
+			display: flex
+			justify-content: space-between
+			a
+				color: #fff
+	.map
+		display: block
+		margin-top: 2em
+		padding-left: 2.5em
+		cursor: pointer
+		&:hover
+			text-decoration: underline									
+				
+
+
+
+
+
+								
+
+					
+.form
+	&-btn
+		position: absolute
+		overflow: hidden
+		width: 15.625em
+		bottom: 2.5em
+		right: -1.750em
+		color: #fff
+		font-size: 1em
+		padding: 2em 2em 1.8em
+		text-align: center
+		border: none
+		background-color: #1e62aa
+		background: linear-gradient(-24deg, #1e62aa 23%, #0de24f 77%)
+		box-shadow: 0px 28px 59px 0px rgba(0, 0, 0, 0.1)
+		cursor: pointer
+		transition: all .25s ease
+		z-index: 1
+		&:after
+			content: ''
+			position: absolute
+			top: -50%
+			right: -50%
+			bottom: -50%
+			left: -50%
+			background: linear-gradient(to bottom, rgba(229, 172, 142, 0), rgba(255,255,255,0.5) 50%, rgba(229, 172, 142, 0))
+			transform: rotateZ(-25deg) translate(-6em, -10.5em)
+		&:before
+			content: ''
+			position: absolute
+			top: 0
+			left: 0
+			width: 100%
+			height: 100%
+			background: #0de24f
+			opacity: 0
+			transition: all 1.5s ease
+			z-index: -10
+		&:hover
+			&:after
+				animation: sheen 1s forwards
+			&:before
+				opacity: 1
+		&:active
+			transform: scale(0.99)
+			transition: all 0.25s ease
+			&:before
+				background: #0de24f * 0.85
+				transition: all 0.25s ease
+	&-wrap
+		position: relative
+		z-index: 100
+		&:before
+			content: ''
+			position: absolute
+			width: 45%
+			height: 45%
+			top: -5%
+			left: -3.5%
+			background: linear-gradient(-24deg, #1963b6 7%, #0de24f 93%)			
+	&-main
+		display: block
+		position: relative
+		background: #fff
+		padding: 3.125em 0 10em
+		h2
+			color: $accent
+			font-size: 1.5em
+			font-weight: 500
+			text-align: center
+			margin-bottom: 0.8em
+		p
+			color: $text
+			font-size: 1.125em
+			line-height: 1.667
+			text-align: center
+			margin-bottom: 2.333em
+		label
+			display: block
+			position: relative
+			margin: 0
+			border-top: 1px solid rgba(74, 74, 74, 0.2)
+			&:last-of-type
+				border-bottom: 1px solid rgba(74, 74, 74, 0.2)
+			svg
+				position: absolute
+				left: 1.875em
+				top: 50%
+				transform: translateY(-50%)
+				fill: $text
+				opacity: 0.4
+				max-width: 1.5em	
+			input
+				color: $text
+				width: 100%
+				padding: 2em 1em 2em 4.688em
+				border: none
+				transition: all .25s ease
+				&:focus
+					box-shadow: 0px 1px 0px 1px rgba(74, 74, 74, 0.3)
+	&-consult
+		position: relative
+		background: url(../assets/img/bg/form-consult-bg.jpg) center no-repeat
+		background-size: cover
+		padding-top: 4.188em
+		padding-bottom: 7.000em
+		margin-right: -70px
+		&:before, &:after
+			content: ''
+			position: absolute
+			width: 100%
+			height: 100%
+		&:before
+			top: 0
+			left: 0
+			background: linear-gradient(-24deg, #1e62aa 26%, #0de24f 74%)
+			box-shadow: 0px 0px 59px 0px rgba(0, 0, 0, 0.15)
+			opacity: 0.6
+			z-index: -0
+		&:after
+			background: $accent
+			bottom: -4.375em
+			right: -4.375em
+			z-index: -10000
+		&__title
+			position: relative
+			z-index: 100
+			text-align: center
+			color: #fff
+			p
+				font-size: 1.875em
+				margin-bottom: 0
+				line-height: 1.467
+			h2
+				font-size: 2.5em
+				font-weight: 900
+		.inputs
+			display: flex
+			align-items: center
+			margin-top: 3.375em
+			transform: translateX(-1em)
+			input
+				padding: 1.65em 2.688em 1.65em 1em
+				box-shadow: 0px 0px 59px 0px rgba(0, 0, 0, 0.15)
+				border: none
+				background-color: #fff
+				margin-right: 1.125em
+				width: 42%
+				&:hover
+					box-shadow: 0px 0px 59px 1px rgba(0, 0, 0, 0.25)
+				&:focus
+					box-shadow: 0px 0px 59px 2px rgba(0, 0, 0, 0.45)	
+			button
+				position: relative
+				width: 4.425em
+				height: 4.425em
+				background-color: $accent
+				border: none
+				cursor: pointer
+				&:hover svg
+					animation: insult-hover 1s infinite linear
+				svg
+					width: 2.25em
+					height: 1.75em
+					fill: #fff
+					position: absolute
+					top: 50%
+					transform: translateY(-50%)
+					right: 0.4em
+					transition: all 0.25s ease
+	&-footer
+		position: absolute
+		top: -12em
+		box-shadow: 0px 0px 49.56px 9.44px rgba(0, 0, 0, 0.07)
+		background-color: #fff
+		color: $text
+		padding: 3.125em 3.125em 9.188em
+		h2
+			font-size: 2.25em
+			font-weight: 800
+			text-align: center
+			text-transform: uppercase
+		p
+			font-size: 1.125em
+			text-align: center
+			text-transform: uppercase
+		input
+			width: 100%
+			padding: 1.688em
+			border: 1px solid rgba(0, 0, 0, 0.2)
+			&:not(:last-of-type)
+				margin-bottom: 1.5em
+.blocker
+	background-color:  rgba(0, 0, 0, 0.53)	
+.popup
+	box-shadow: 0px 0px 59px 0px rgba(0, 0, 0, 0.13)
+	border-radius: 0
+	a.close-modal
+		background: none
+		top: 0.3em
+		right: 0.4em
+		font-size: 3em
+		text-indent: 1px
+		width: 0.5em
+		height: 0.5em
+		opacity: 0.7
+		transition: all .25s ease
+		&:hover
+			opacity: 1
+	&-product
+		max-width: 970px
+		padding: 3.125em 2em 
+		img
+			max-width: 45%
+			float: right
+		h2
+			font-size: 1.5em
+			margin-bottom: 1.417em
+		p
+			line-height: 2
+			margin-bottom: 3em
+		.form-btn
+			display: block
+			position: relative
+			bottom: 0
+			right: 0
+			margin: 0 auto
+	&-map
+		padding: 0
+		max-width: 62.5em
+		height: 27.813em
+		iframe
+			width: 100%
+			height: 100%						
+
+@keyframes insult-hover
+	0%
+		right: 0.4em
+	100% 
+		right: -0.4em
+
+@import "media" // Always at the end
